@@ -1,3 +1,5 @@
+import 'package:Grocery/Screen%20widgets/update_profile.dart';
+import 'package:Grocery/screens/Auth/login_screen.dart';
 import 'package:Grocery/screens/OfferZoneScreen.dart';
 import 'package:Grocery/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +20,17 @@ class _DrawerScreenState extends State<DrawerScreen> {
 
       new UserAccountsDrawerHeader(
         accountName: "Bishal Mondal".text.make(),
-        accountEmail: "ecmt-18-025".text.make(),
+        accountEmail: "bm8130377@gmail.com".text.make(),
         currentAccountPicture: new CircleAvatar(
           backgroundColor: Colors.white,
-          child: "B".text.color(Colors.black).xl6.make(),
+          child: Image(
+            image: AssetImage("assets/av.png"),
+          )
+
         ),
+        onDetailsPressed: (){
+          Get.to(Profile_Screen());
+        },
       ),
       new ListTile(
         title: "Home".text.make(),
@@ -55,7 +63,12 @@ class _DrawerScreenState extends State<DrawerScreen> {
         },
       ),
       new ListTile(
-          title: "Log out".text.make(), trailing: new Icon(Icons.logout)),
+          title: "Log out".text.make(),
+        trailing: new Icon(Icons.logout),
+        onTap: (){
+            // Navigator.of(context).push(MaterialPageRoute(builder: (context)=> LoginScreen()));
+        },
+      ),
       Container(
         child: Center(
           child: Image(

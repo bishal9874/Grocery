@@ -1,3 +1,4 @@
+import 'package:Grocery/Screen%20widgets/update_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,7 +52,7 @@ class MainProfile extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              //Get.to(Profile_Screen());
+              Get.to(Profile_Screen());
             },
             child: Text(
               "Update Profile",
