@@ -1,10 +1,17 @@
+
 import 'package:Grocery/Screen%20widgets/update_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class MainProfile extends StatelessWidget {
+class MainProfile extends StatefulWidget {
+  @override
+  _MainProfileState createState() => _MainProfileState();
+}
+
+class _MainProfileState extends State<MainProfile> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -75,7 +82,10 @@ class MainProfile extends StatelessWidget {
           height: height * 0.01,
         ),
         InkWell(
-          onTap: () {},
+          onTap: (){
+            _showMyDialog(context);
+
+          },
           child: _contents("assets/support.jpg", "Support", "Contact details"),
         ),
         SizedBox(
@@ -87,6 +97,91 @@ class MainProfile extends StatelessWidget {
               "Term and Condition", "while using our app"),
         )
       ]),
+    );
+  }
+
+  Future<void> _showMyDialog(BuildContext context) async {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: true, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(
+            'Contact Details',
+            style: GoogleFonts.raleway(
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold
+            ),
+          ),
+          content: Container(
+            height: height*0.12,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Text(
+                         "Mobile Number",
+                         style: GoogleFonts.raleway(
+                           fontSize: 15.0,
+                           fontWeight: FontWeight.bold
+                         ),
+                       ),
+                       Text(
+                         "75554228474",
+                         style: GoogleFonts.raleway(
+                             fontSize: 13.0,
+
+                         ),
+                       )
+                     ],
+                    ),
+                    Icon(
+                      FontAwesomeIcons.phone
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: height*0.02,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Email",
+                          style: GoogleFonts.raleway(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Text(
+                          "example@gmail.com",
+                          style: GoogleFonts.raleway(
+                            fontSize: 13.0,
+
+                          ),
+                        )
+                      ],
+                    ),
+                    Icon(
+                        FontAwesomeIcons.envelope
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+
+        );
+      },
     );
   }
 
