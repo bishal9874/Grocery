@@ -34,10 +34,6 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: size.height * 0.09),
-              // Text(
-              //   "Sign In your Account  ",
-              //   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30.0),
-              // ),
 
               Icon(
                 Icons.shopping_cart_outlined,

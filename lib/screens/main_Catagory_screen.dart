@@ -2,7 +2,7 @@ import 'package:Grocery/Screen%20widgets/Drawer_Screen.dart';
 import 'package:Grocery/Screen%20widgets/search_screen.dart';
 import 'package:Grocery/provider/shop_provider.dart';
 import 'package:Grocery/screens/Home_screen.dart';
-import 'file:///F:/ui--ux/Grocery/lib/Screen%20widgets/Notification_screen.dart';
+
 import 'package:Grocery/screens/OfferZoneScreen.dart';
 import 'package:Grocery/screens/Profile_screen.dart';
 import 'package:Grocery/screens/cart_screen.dart';
@@ -56,8 +56,8 @@ class _MainScreenState extends State<MainScreen> {
             // ),
             actions: [
               Container(
-                height: height*0.05,
-                width: width*0.20,
+                height: height * 0.05,
+                width: width * 0.20,
                 child: Image(
                   //height: height * 0.10,
 
@@ -66,9 +66,8 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
               SizedBox(
-               width: width*0.02,
+                width: width * 0.02,
               ),
-
               HStack([
                 IconButton(
                     icon: Icon(
@@ -84,7 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                       color: Colors.black,
                     ),
                     onPressed: () {
-                      Get.to(NotificationScreen());
+                      //Get.to(NotificationScreen());
                     }),
                 Stack(
                   children: [
@@ -115,7 +114,6 @@ class _MainScreenState extends State<MainScreen> {
                         Get.to(CartPage());
                       },
                     ),
-
                   ],
                 ),
               ]),
@@ -123,14 +121,10 @@ class _MainScreenState extends State<MainScreen> {
             // centerTitle: true,
             backgroundColor: Color(0xFFf6f5ee),
             elevation: 0.0,
-
-
           ),
         ),
         bottomNavigationBar: TabBar(
-
           tabs: [
-
             Tab(
               icon: Icon(Icons.home),
             ),
